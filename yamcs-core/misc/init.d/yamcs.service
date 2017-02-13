@@ -3,12 +3,10 @@ Description=Yamcs Server
 
 [Service]
 Type=simple
-ExecStart=su - $YAMCS_USER sh -c "YAMCS_DAEMON=1; export YAMCS_DAEMON; nohup $YAMCS_BIN >$OUTERR.0  2>&1 & echo \$! >$PID_FILE"
-Environment="YAMCS_USER=yamcs"
-Environment="YAMCS_HOME=/opt/yamcs"
-Environment="YAMCS_BIN=$YAMCS_HOME/bin/yamcs-server.sh"
-Environment="PID_FILE=/var/run/yamcs-server.pid"
-Environment="OUTERR=$YAMCS_HOME/log/yamcs-server.out"
+ExecStart=/opt/yamcs/bin/yamcs-server.sh
+Environment="YAMCS_DAEMON=1"
+WorkingDirectory=/opt/yamcs
+User=yamcs
 
 [Install]
 WantedBy=multi-user.target
