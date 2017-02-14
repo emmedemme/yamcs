@@ -43,6 +43,7 @@ cp -a yamcs-core/bin %{buildroot}/%{prefix}/
 cp yamcs-core/target/yamcs*.jar %{buildroot}/%{prefix}/lib
 cp -a yamcs-core/misc/init.d %{buildroot}/etc/
 cp -a yamcs-api/src/main/*.proto %{buildroot}/%{prefix}/lib/
+cp -a yamcs-core/misc/systemd/yamcs-server.service %{buildroot}/usr/lib/systemd/system/
 
 %if %{_buildweb}
 cp -a yamcs-web/build/*  %{buildroot}/%{prefix}/web/
@@ -74,6 +75,7 @@ fi
 %{prefix}/web
 %exclude %{prefix}/lib/ext
 %exclude %{prefix}/lib/xtce
+%config /usr/lib/systemd/system/yamcs-server.service
 
 
 %defattr(644,yamcs,yamcs,755)
