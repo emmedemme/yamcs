@@ -3,6 +3,7 @@ Description=Yamcs Server
 
 [Service]
 Type=simple
+PIDFile=/var/run/yamcs-server.pid
 ExecStart=/opt/yamcs/bin/yamcs-server.sh
 Environment="YAMCS_DAEMON=1"
 WorkingDirectory=/opt/yamcs
