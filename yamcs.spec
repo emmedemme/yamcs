@@ -36,6 +36,7 @@ mkdir -p %{buildroot}/etc # For system /etc
 mkdir -p %{buildroot}/%{prefix}/lib/xtce
 mkdir -p %{buildroot}/%{prefix}/lib/ext
 mkdir -p %{buildroot}/%{prefix}/web/
+mkdir -p %{buildroot}/usr/lib/systemd/system
 
 cp -a yamcs-core/lib %{buildroot}/%{prefix}/
 cp -a yamcs-core/etc %{buildroot}/%{prefix}/
