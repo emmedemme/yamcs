@@ -8,6 +8,7 @@ ExecStart=/opt/yamcs/bin/yamcs-server.sh
 Environment="YAMCS_DAEMON=1"
 WorkingDirectory=/opt/yamcs
 User=yamcs
+SuccessExitStatus=0 143
 
 [Install]
 WantedBy=multi-user.target
